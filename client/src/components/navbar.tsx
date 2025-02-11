@@ -1,11 +1,12 @@
 import { Link, useLocation } from "wouter";
-import { Home, User, Wallet } from "lucide-react";
+import { Home, User, Wallet, ShoppingCart } from "lucide-react";
 
 export default function Navbar() {
   const [location] = useLocation();
 
   const navItems = [
     { href: "/", icon: <Home className="h-6 w-6" />, label: "Order Here" },
+    { href: "/cart", icon: <ShoppingCart className="h-6 w-6" />, label: "Cart" },
     { href: "/profile", icon: <User className="h-6 w-6" />, label: "Profile" },
     { href: "/savings", icon: <Wallet className="h-6 w-6" />, label: "Saving Mode" }
   ];

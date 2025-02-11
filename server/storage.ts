@@ -30,7 +30,6 @@ export class DatabaseStorage implements IStorage {
   }
 }
 
-// Initialize sample data
 async function initializeData() {
   const restaurantData = [
     {
@@ -84,7 +83,7 @@ async function initializeData() {
     {
       name: "Seoul Tower",
       description: "Authentic Korean dishes",
-      image: "https://images.unsplash.com/photo-1635363638580-c2809d049ebc",
+      image: "https://images.unsplash.com/photo-1634626032880-6eb3c9563829",
       category: "Korean",
     },
   ];
@@ -101,7 +100,7 @@ async function initializeData() {
             restaurantId: restaurant.id,
             name: "Masala Dosa",
             description: "Crispy dosa with potato filling",
-            price: "999",
+            price: "199",
             image: "https://images.unsplash.com/photo-1630383249896-424e482df921",
             category: "South Indian",
           },
@@ -109,10 +108,34 @@ async function initializeData() {
             restaurantId: restaurant.id,
             name: "Idli Sambar",
             description: "Steamed rice cakes with lentil soup",
-            price: "799",
+            price: "159",
             image: "https://images.unsplash.com/photo-1630383249825-a6e8a3faea0b",
             category: "South Indian",
           },
+          {
+            restaurantId: restaurant.id,
+            name: "Vada",
+            description: "Crispy lentil donuts",
+            price: "129",
+            image: "https://images.unsplash.com/photo-1630383249825-a6e8a3faea0b",
+            category: "South Indian",
+          },
+          {
+            restaurantId: restaurant.id,
+            name: "Uttapam",
+            description: "Thick rice pancake with toppings",
+            price: "179",
+            image: "https://images.unsplash.com/photo-1630383249896-424e482df921",
+            category: "South Indian",
+          },
+          {
+            restaurantId: restaurant.id,
+            name: "Pongal",
+            description: "Rice and lentil porridge",
+            price: "149",
+            image: "https://images.unsplash.com/photo-1630383249896-424e482df921",
+            category: "South Indian",
+          }
         ];
       case "Dillipoint":
         return [
@@ -120,7 +143,31 @@ async function initializeData() {
             restaurantId: restaurant.id,
             name: "Chicken Biryani",
             description: "Fragrant rice with tender chicken",
-            price: "1299",
+            price: "259",
+            image: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0",
+            category: "North Indian",
+          },
+          {
+            restaurantId: restaurant.id,
+            name: "Butter Chicken",
+            description: "Creamy tomato chicken curry",
+            price: "239",
+            image: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0",
+            category: "North Indian",
+          },
+          {
+            restaurantId: restaurant.id,
+            name: "Dal Makhani",
+            description: "Creamy black lentils",
+            price: "179",
+            image: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0",
+            category: "North Indian",
+          },
+          {
+            restaurantId: restaurant.id,
+            name: "Paneer Tikka",
+            description: "Grilled cottage cheese",
+            price: "199",
             image: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0",
             category: "North Indian",
           },
@@ -128,10 +175,10 @@ async function initializeData() {
             restaurantId: restaurant.id,
             name: "Seekh Kebab",
             description: "Grilled minced meat kebabs",
-            price: "1199",
+            price: "219",
             image: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0",
             category: "North Indian",
-          },
+          }
         ];
       case "ChinaHit":
         return [
@@ -139,21 +186,69 @@ async function initializeData() {
             restaurantId: restaurant.id,
             name: "Kung Pao Chicken",
             description: "Spicy diced chicken with peanuts",
-            price: "1199",
+            price: "239",
             image: "https://images.unsplash.com/photo-1585032226651-759b368d7246",
             category: "Chinese",
           },
+          {
+            restaurantId: restaurant.id,
+            name: "Dim Sum Platter",
+            description: "Assorted steamed dumplings",
+            price: "199",
+            image: "https://images.unsplash.com/photo-1585032226651-759b368d7246",
+            category: "Chinese",
+          },
+          {
+            restaurantId: restaurant.id,
+            name: "Schezwan Noodles",
+            description: "Spicy stir-fried noodles",
+            price: "179",
+            image: "https://images.unsplash.com/photo-1585032226651-759b368d7246",
+            category: "Chinese",
+          },
+          {
+            restaurantId: restaurant.id,
+            name: "Sweet & Sour Pork",
+            description: "Crispy pork in tangy sauce",
+            price: "259",
+            image: "https://images.unsplash.com/photo-1585032226651-759b368d7246",
+            category: "Chinese",
+          }
         ];
       case "Seoul Tower":
         return [
           {
             restaurantId: restaurant.id,
-            name: "Bibimbap",
-            description: "Mixed rice with vegetables",
-            price: "1299",
-            image: "https://images.unsplash.com/photo-1635363638580-c2809d049ebc",
+            name: "Korean Corn Dog",
+            description: "Crispy corn dog with cheese",
+            price: "159",
+            image: "https://images.unsplash.com/photo-1634626032880-6eb3c9563829",
             category: "Korean",
           },
+          {
+            restaurantId: restaurant.id,
+            name: "Bibimbap",
+            description: "Mixed rice with vegetables",
+            price: "259",
+            image: "https://images.unsplash.com/photo-1634626032880-6eb3c9563829",
+            category: "Korean",
+          },
+          {
+            restaurantId: restaurant.id,
+            name: "Tteokbokki",
+            description: "Spicy rice cakes",
+            price: "179",
+            image: "https://images.unsplash.com/photo-1634626032880-6eb3c9563829",
+            category: "Korean",
+          },
+          {
+            restaurantId: restaurant.id,
+            name: "Kimchi Fried Rice",
+            description: "Spicy fermented cabbage rice",
+            price: "199",
+            image: "https://images.unsplash.com/photo-1634626032880-6eb3c9563829",
+            category: "Korean",
+          }
         ];
       case "Foodie":
         return [
@@ -161,7 +256,23 @@ async function initializeData() {
             restaurantId: restaurant.id,
             name: "Classic Cheeseburger",
             description: "Juicy beef patty with melted cheese",
-            price: "999",
+            price: "199",
+            image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
+            category: "Burgers",
+          },
+          {
+            restaurantId: restaurant.id,
+            name: "BBQ Bacon Burger",
+            description: "Smoky bacon with BBQ sauce",
+            price: "219",
+            image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
+            category: "Burgers",
+          },
+          {
+            restaurantId: restaurant.id,
+            name: "Mushroom Swiss Burger",
+            description: "Sautéed mushrooms with Swiss cheese",
+            price: "229",
             image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
             category: "Burgers",
           },
@@ -169,10 +280,18 @@ async function initializeData() {
             restaurantId: restaurant.id,
             name: "Creamy Alfredo",
             description: "Fresh pasta in rich cream sauce",
-            price: "1199",
+            price: "239",
             image: "https://images.unsplash.com/photo-1645112411341-6c4fd023714a",
             category: "Pasta",
           },
+          {
+            restaurantId: restaurant.id,
+            name: "Pesto Pasta",
+            description: "Basil pesto with pine nuts",
+            price: "219",
+            image: "https://images.unsplash.com/photo-1645112411341-6c4fd023714a",
+            category: "Pasta",
+          }
         ];
       case "Hungrybaba":
         return [
@@ -180,10 +299,34 @@ async function initializeData() {
             restaurantId: restaurant.id,
             name: "Margherita Pizza",
             description: "Classic tomato and mozzarella",
-            price: "1299",
+            price: "259",
             image: "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca",
             category: "Pizza",
           },
+          {
+            restaurantId: restaurant.id,
+            name: "Pepperoni Pizza",
+            description: "Spicy pepperoni with cheese",
+            price: "279",
+            image: "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca",
+            category: "Pizza",
+          },
+          {
+            restaurantId: restaurant.id,
+            name: "BBQ Chicken Pizza",
+            description: "Grilled chicken with BBQ sauce",
+            price: "299",
+            image: "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca",
+            category: "Pizza",
+          },
+          {
+            restaurantId: restaurant.id,
+            name: "Veggie Supreme",
+            description: "Loaded with fresh vegetables",
+            price: "259",
+            image: "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca",
+            category: "Pizza",
+          }
         ];
       case "Tastieee":
         return [
@@ -191,10 +334,34 @@ async function initializeData() {
             restaurantId: restaurant.id,
             name: "Grilled Salmon",
             description: "Fresh salmon with herbs",
-            price: "1799",
+            price: "359",
             image: "https://images.unsplash.com/photo-1543339494-b4cd4f7ba686",
             category: "Seafood",
           },
+          {
+            restaurantId: restaurant.id,
+            name: "Fish & Chips",
+            description: "Crispy battered fish with fries",
+            price: "259",
+            image: "https://images.unsplash.com/photo-1543339494-b4cd4f7ba686",
+            category: "Seafood",
+          },
+          {
+            restaurantId: restaurant.id,
+            name: "Shrimp Scampi",
+            description: "Garlic butter shrimp pasta",
+            price: "299",
+            image: "https://images.unsplash.com/photo-1543339494-b4cd4f7ba686",
+            category: "Seafood",
+          },
+          {
+            restaurantId: restaurant.id,
+            name: "Seafood Platter",
+            description: "Assorted seafood selection",
+            price: "399",
+            image: "https://images.unsplash.com/photo-1543339494-b4cd4f7ba686",
+            category: "Seafood",
+          }
         ];
       default:
         return [];
