@@ -29,7 +29,14 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen bg-background/95">
-        <main className="container mx-auto px-4 py-4 max-w-md">
+        <header className="fixed top-0 left-0 right-0 bg-primary border-b border-primary/20 z-50">
+          <div className="flex justify-center items-center h-14 max-w-md mx-auto">
+            <h1 className="text-2xl font-bold text-white tracking-wide">
+              foodrow
+            </h1>
+          </div>
+        </header>
+        <main className="container mx-auto px-4 py-4 max-w-md mt-14">
           <Router />
         </main>
         <Navbar />
