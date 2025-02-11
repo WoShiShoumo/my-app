@@ -1,8 +1,9 @@
-import { Link, useLocation } from "wouter";
+
+import { useLocation } from "wouter";
 import { Home, User, Wallet, ShoppingCart } from "lucide-react";
 
 export default function Navbar() {
-  const [location] = useLocation();
+  const [location, navigate] = useLocation();
 
   const navItems = [
     { href: "/", icon: <Home className="h-6 w-6" />, label: "Order Here" },
@@ -15,14 +16,16 @@ export default function Navbar() {
     <nav className="fixed bottom-0 left-0 right-0 bg-primary border-t border-primary/20">
       <div className="flex justify-around items-center h-16 max-w-md mx-auto">
         {navItems.map((item) => (
-          <Link href={item.href} key={item.href}>
-            <a className={`flex flex-col items-center p-2 ${
+          <button
+            key={item.href}
+            onClick={() => navigate(item.href)}
+            className={`flex flex-col items-center p-2 ${
               location === item.href ? 'text-white' : 'text-white/70 hover:text-white'
-            }`}>
-              {item.icon}
-              <span className="text-xs mt-1">{item.label}</span>
-            </a>
-          </Link>
+            }`}
+          >
+            {item.icon}
+            <span className="text-xs mt-1">{item.label}</span>
+          </button>
         ))}
       </div>
     </nav>
