@@ -64,12 +64,6 @@ async function initializeData() {
       category: "Fast Food",
     },
     {
-      name: "Bangaliana",
-      description: "Authentic Bengali cuisine",
-      image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0",
-      category: "Bengali",
-    },
-    {
       name: "Southern Express",
       description: "South Indian delicacies",
       image: "https://images.unsplash.com/photo-1630383249896-424e482df921",
@@ -80,12 +74,6 @@ async function initializeData() {
       description: "Authentic North Indian cuisine",
       image: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0",
       category: "North Indian",
-    },
-    {
-      name: "Tyfood",
-      description: "Authentic Japanese cuisine",
-      image: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c",
-      category: "Japanese",
     },
     {
       name: "ChinaHit",
@@ -107,25 +95,6 @@ async function initializeData() {
 
   const menuItemsData = restaurantEntries.flatMap(restaurant => {
     switch (restaurant.name) {
-      case "Bangaliana":
-        return [
-          {
-            restaurantId: restaurant.id,
-            name: "Ilish Paturi",
-            description: "Hilsa fish in banana leaf",
-            price: "24.99",
-            image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0",
-            category: "Bengali",
-          },
-          {
-            restaurantId: restaurant.id,
-            name: "Bengali Chicken Curry",
-            description: "Traditional Bengali style curry",
-            price: "18.99",
-            image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7",
-            category: "Bengali",
-          },
-        ];
       case "Southern Express":
         return [
           {
@@ -164,17 +133,6 @@ async function initializeData() {
             category: "North Indian",
           },
         ];
-      case "Tyfood":
-        return [
-          {
-            restaurantId: restaurant.id,
-            name: "Sushi Platter",
-            description: "Assorted fresh sushi rolls",
-            price: "28.99",
-            image: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c",
-            category: "Japanese",
-          },
-        ];
       case "ChinaHit":
         return [
           {
@@ -197,7 +155,47 @@ async function initializeData() {
             category: "Korean",
           },
         ];
-      // Keep existing menu items for Foodie, Hungrybaba, and Tastieee
+      case "Foodie":
+        return [
+          {
+            restaurantId: restaurant.id,
+            name: "Classic Cheeseburger",
+            description: "Juicy beef patty with melted cheese",
+            price: "12.99",
+            image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
+            category: "Burgers",
+          },
+          {
+            restaurantId: restaurant.id,
+            name: "Creamy Alfredo",
+            description: "Fresh pasta in rich cream sauce",
+            price: "14.99",
+            image: "https://images.unsplash.com/photo-1645112411341-6c4fd023714a",
+            category: "Pasta",
+          },
+        ];
+      case "Hungrybaba":
+        return [
+          {
+            restaurantId: restaurant.id,
+            name: "Margherita Pizza",
+            description: "Classic tomato and mozzarella",
+            price: "16.99",
+            image: "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca",
+            category: "Pizza",
+          },
+        ];
+      case "Tastieee":
+        return [
+          {
+            restaurantId: restaurant.id,
+            name: "Grilled Salmon",
+            description: "Fresh salmon with herbs",
+            price: "22.99",
+            image: "https://images.unsplash.com/photo-1543339494-b4cd4f7ba686",
+            category: "Seafood",
+          },
+        ];
       default:
         return [];
     }
