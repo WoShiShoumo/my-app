@@ -25,7 +25,7 @@ export default function RestaurantPage() {
     setCart(prev => {
       const existing = prev.find(i => i.id === item.id);
       if (existing) {
-        return prev.map(i => 
+        return prev.map(i =>
           i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
         );
       }
@@ -66,7 +66,7 @@ export default function RestaurantPage() {
                   <CardTitle>{item.name}</CardTitle>
                   <p className="text-muted-foreground">{item.description}</p>
                   <div className="mt-4 flex justify-between items-center">
-                    <span className="text-lg font-bold">${item.price}</span>
+                    <span className="text-lg font-bold">₹{item.price}</span>
                     <Button onClick={() => addToCart(item)}>Add to Cart</Button>
                   </div>
                 </CardContent>

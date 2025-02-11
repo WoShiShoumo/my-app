@@ -42,7 +42,7 @@ export default function Cart({ items, setItems }: CartProps) {
               <div>
                 <p className="font-medium">{item.name}</p>
                 <p className="text-sm text-muted-foreground">
-                  ${item.price} x {item.quantity}
+                  ₹{item.price} x {item.quantity}
                 </p>
               </div>
               <div className="flex items-center gap-2">
@@ -77,7 +77,7 @@ export default function Cart({ items, setItems }: CartProps) {
         <CardFooter className="flex-col gap-4">
           <div className="flex justify-between w-full text-lg font-bold">
             <span>Total:</span>
-            <span>${total.toFixed(2)}</span>
+            <span>₹{total.toFixed(2)}</span>
           </div>
           <Button 
             className="w-full" 
