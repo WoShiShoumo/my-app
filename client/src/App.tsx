@@ -29,7 +29,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen bg-background/95">
-        <main className="container mx-auto px-4 py-4">
+        <main className="container mx-auto px-4 py-4 max-w-md">
           <Router />
         </main>
         <Navbar />

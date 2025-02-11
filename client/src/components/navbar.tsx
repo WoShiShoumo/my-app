@@ -5,18 +5,18 @@ export default function Navbar() {
   const [location] = useLocation();
 
   const navItems = [
-    { href: "/", icon: <Home />, label: "Order Here" },
-    { href: "/profile", icon: <User />, label: "Profile" },
-    { href: "/savings", icon: <Wallet />, label: "Saving Mode" }
+    { href: "/", icon: <Home className="h-6 w-6" />, label: "Order Here" },
+    { href: "/profile", icon: <User className="h-6 w-6" />, label: "Profile" },
+    { href: "/savings", icon: <Wallet className="h-6 w-6" />, label: "Saving Mode" }
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-card border-t">
-      <div className="flex justify-around items-center h-16">
+    <nav className="fixed bottom-0 left-0 right-0 bg-primary border-t border-primary/20">
+      <div className="flex justify-around items-center h-16 max-w-md mx-auto">
         {navItems.map((item) => (
           <Link href={item.href} key={item.href}>
             <a className={`flex flex-col items-center p-2 ${
-              location === item.href ? 'text-primary' : 'text-muted-foreground'
+              location === item.href ? 'text-white' : 'text-white/70 hover:text-white'
             }`}>
               {item.icon}
               <span className="text-xs mt-1">{item.label}</span>

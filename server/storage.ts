@@ -34,47 +34,61 @@ export class DatabaseStorage implements IStorage {
 async function initializeData() {
   const restaurantData = [
     {
-      name: "Le Petit Bistro",
-      description: "Authentic French cuisine in a cozy setting",
-      image: "https://images.unsplash.com/photo-1505151265254-87a15834d4ee",
-      category: "French",
+      name: "Foodie",
+      description: "Best burgers and pasta in town",
+      image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141",
+      category: "Burgers & Pasta",
     },
     {
-      name: "Pasta Paradise",
-      description: "Handmade pasta and Italian favorites",
-      image: "https://images.unsplash.com/photo-1591401119145-8099f9ffa604",
-      category: "Italian",
+      name: "Hungrybaba",
+      description: "Authentic Italian pizza and pasta",
+      image: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3",
+      category: "Pizza",
+    },
+    {
+      name: "Tastieee",
+      description: "Fresh seafood delicacies",
+      image: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0",
+      category: "Seafood",
     },
   ];
 
-  const [restaurant1, restaurant2] = await db.insert(restaurants)
+  const [restaurant1, restaurant2, restaurant3] = await db.insert(restaurants)
     .values(restaurantData)
     .returning();
 
   const menuItemsData = [
     {
       restaurantId: restaurant1.id,
-      name: "Coq au Vin",
-      description: "Classic French chicken braised in wine",
-      price: "24.99",
-      image: "https://images.unsplash.com/photo-1563897539633-7374c276c212",
-      category: "Main Course",
+      name: "Classic Cheeseburger",
+      description: "Juicy beef patty with melted cheese",
+      price: "12.99",
+      image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
+      category: "Burgers",
     },
     {
       restaurantId: restaurant1.id,
-      name: "Beef Bourguignon",
-      description: "Tender beef stewed in red wine",
-      price: "28.99",
-      image: "https://images.unsplash.com/photo-1564844536311-de546a28c87d",
-      category: "Main Course",
+      name: "Creamy Alfredo",
+      description: "Fresh pasta in rich cream sauce",
+      price: "14.99",
+      image: "https://images.unsplash.com/photo-1645112411341-6c4fd023714a",
+      category: "Pasta",
     },
     {
       restaurantId: restaurant2.id,
-      name: "Spaghetti Carbonara",
-      description: "Classic Roman pasta with eggs and guanciale",
-      price: "18.99",
-      image: "https://images.unsplash.com/photo-1492683962492-deef0ec456c0",
-      category: "Pasta",
+      name: "Margherita Pizza",
+      description: "Classic tomato and mozzarella",
+      price: "16.99",
+      image: "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca",
+      category: "Pizza",
+    },
+    {
+      restaurantId: restaurant3.id,
+      name: "Grilled Salmon",
+      description: "Fresh salmon with herbs",
+      price: "22.99",
+      image: "https://images.unsplash.com/photo-1543339494-b4cd4f7ba686",
+      category: "Seafood",
     },
   ];
 

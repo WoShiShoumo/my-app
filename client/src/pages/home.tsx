@@ -22,7 +22,7 @@ export default function Home() {
 
   if (isLoading) {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 max-w-md mx-auto">
         {[...Array(6)].map((_, i) => (
           <Card key={i}>
             <Skeleton className="h-48" />
@@ -37,9 +37,9 @@ export default function Home() {
   }
 
   return (
-    <div className="space-y-6 pb-20">
-      <h1 className="text-2xl font-bold text-primary">Open Now</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="space-y-6 pb-20 max-w-md mx-auto">
+      <h1 className="text-2xl font-bold text-primary">Near You</h1>
+      <div className="grid grid-cols-1 gap-4">
         {restaurants?.map((restaurant) => (
           <Link key={restaurant.id} href={`/restaurant/${restaurant.id}`}>
             <Card className="cursor-pointer hover:shadow-lg transition-shadow relative">
