@@ -7,6 +7,8 @@ import Home from "@/pages/home";
 import Restaurant from "@/pages/restaurant";
 import Checkout from "@/pages/checkout";
 import Confirmation from "@/pages/confirmation";
+import Profile from "@/pages/profile";
+import Savings from "@/pages/savings";
 import Navbar from "@/components/navbar";
 
 function Router() {
@@ -16,6 +18,8 @@ function Router() {
       <Route path="/restaurant/:id" component={Restaurant} />
       <Route path="/checkout" component={Checkout} />
       <Route path="/confirmation/:id" component={Confirmation} />
+      <Route path="/profile" component={Profile} />
+      <Route path="/savings" component={Savings} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -24,11 +28,11 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen bg-background">
-        <Navbar />
-        <main className="container mx-auto px-4 py-8">
+      <div className="min-h-screen bg-background/95">
+        <main className="container mx-auto px-4 py-4">
           <Router />
         </main>
+        <Navbar />
       </div>
       <Toaster />
     </QueryClientProvider>
