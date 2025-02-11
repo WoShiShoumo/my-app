@@ -13,13 +13,17 @@ export default function Cart({ items, setItems }: CartProps) {
   const [, navigate] = useLocation();
 
   const updateQuantity = (id: number, delta: number) => {
-    setItems(prev => prev.map(item => {
-      if (item.id === id) {
-        const newQuantity = item.quantity + delta;
-        return newQuantity > 0 ? { ...item, quantity: newQuantity } : item;
-      }
-      return item;
-    }).filter(item => item.quantity > 0));
+    setItems(prev => {
+      const newCart = prev.map(item => {
+        if (item.id === id) {
+          const newQuantity = item.quantity + delta;
+          return newQuantity > 0 ? { ...item, quantity: newQuantity } : item;
+        }
+        return item;
+      }).filter(item => item.quantity > 0);
+      localStorage.setItem('cart', JSON.stringify(newCart));
+      return newCart;
+    });
   };
 
   const total = items.reduce((sum, item) => 

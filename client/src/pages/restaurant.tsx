@@ -23,13 +23,17 @@ export default function RestaurantPage() {
 
   const addToCart = (item: MenuItem) => {
     setCart(prev => {
-      const existing = prev.find(i => i.id === item.id);
-      if (existing) {
-        return prev.map(i =>
-          i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
-        );
-      }
-      return [...prev, { ...item, quantity: 1 }];
+      const newCart = (() => {
+        const existing = prev.find(i => i.id === item.id);
+        if (existing) {
+          return prev.map(i =>
+            i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+          );
+        }
+        return [...prev, { ...item, quantity: 1 }];
+      })();
+      localStorage.setItem('cart', JSON.stringify(newCart));
+      return newCart;
     });
     toast({
       title: "Added to cart",
